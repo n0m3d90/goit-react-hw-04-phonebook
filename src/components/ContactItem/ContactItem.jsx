@@ -1,12 +1,18 @@
 import PropTypes from 'prop-types';
-import { Item, Button } from './ContactItem.styled';
+import { RiUserUnfollowLine } from "react-icons/ri";
+import { Item, Name, Number, Button } from "./ContactItem.styled";
 
-export const ContactItem = ({ id, name, number, deleteContacts }) => (
-  <Item>
-    {name}: {number}
-    <Button onClick={() => deleteContacts(id)}>Delete</Button>
-  </Item>
-);
+export const ContactItem = ({ id, name, number, deleteContacts }) => {
+  return (
+    <Item>
+      <Name>{name}:</Name>
+      <Number>{number}</Number>
+      <Button type="button" onClick={() => deleteContacts(id)}>
+        <RiUserUnfollowLine style={{ width: '18px', height: '18px' }} />Delete
+      </Button>
+    </Item>
+  );
+};
 
 ContactItem.propTypes = {
   id: PropTypes.string.isRequired,
