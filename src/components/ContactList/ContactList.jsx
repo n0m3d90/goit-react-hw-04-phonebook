@@ -11,7 +11,7 @@ export const ContactList = ({ data, deleteContacts }) => {
           id={item.id}
           name={item.name}
           number={item.number}
-          deletContacts={deleteContacts}
+          deleteContacts={deleteContacts}
         />
       ))}
     </List>
@@ -25,6 +25,6 @@ ContactList.propTypes = {
       name: PropTypes.string.isRequired,
       number: PropTypes.string.isRequired,
     }).isRequired
-  ),
+  ).isRequired,
   deleteContacts: PropTypes.func.isRequired,
 };

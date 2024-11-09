@@ -32,7 +32,7 @@ export const App = () => {
     setFilter(e.target.value);
   };
 
-  const deletContacts = id => {
+  const deleteContacts = id => {
     setContacts(prevContacts => prevContacts.filter(contact => contact.id !== id));
   };
 
@@ -54,7 +54,7 @@ export const App = () => {
       {visibleContacts.length === 0 ? (
         <Text>Sorry, you don't have any contacts.</Text>
       ) : (
-        <ContactList data={visibleContacts} deletContacts={deletContacts} />
+        <ContactList data={visibleContacts} deleteContacts={deleteContacts} />
       )}
     </Container>
   );
